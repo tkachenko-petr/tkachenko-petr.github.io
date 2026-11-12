@@ -1,22 +1,45 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="ru" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Мои расходы</title>
-    <meta name="description" content="Простой дневник расходов: записывайте покупки, выбирайте категории и следите за общей суммой. Данные остаются в вашем браузере." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Мои расходы" />
-    <meta property="og:description" content="Простой дневник расходов: записывайте покупки, выбирайте категории и следите за общей суммой." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ткаченко Пётр — веб-разработчик. Создаю адаптивные сайты и веб-приложения на React и TypeScript. Проекты, навыки и контакты." />
+    <link rel="canonical" href="https://tkachenko-petr.github.io/" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Ткаченко Пётр — веб-разработчик | Сайты и веб-приложения" />
+    <meta property="og:description" content="Ткаченко Пётр — веб-разработчик. Создаю адаптивные сайты и веб-приложения на React и TypeScript. Проекты, навыки и контакты." />
+    <meta property="og:url" content="https://tkachenko-petr.github.io/" />
+    <meta property="og:image" content="https://tkachenko-petr.github.io/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Мои расходы" />
-    <meta name="twitter:description" content="Простой дневник расходов: записывайте покупки, выбирайте категории и следите за общей суммой." />
+    <meta name="theme-color" content="#070A12" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script type="module" crossorigin src="/assets/index-O0ggY5kE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BJRoX9az.css">
+    <script>
+      // Keep the key and allowed values aligned with src/theme.ts.
+      (() => {
+        let theme = 'dark'
+        try {
+          if (localStorage.getItem('portfolio-theme') === 'light') theme = 'light'
+        } catch {
+          // Dark is also the fallback when storage access is blocked.
+        }
+        document.documentElement.dataset.theme = theme
+        document.querySelector('meta[name="theme-color"]').setAttribute(
+          'content', theme === 'light' ? '#E8EBF0' : '#070A12',
+        )
+      })()
+    </script>
+    <style>
+      /* Correct canvas while the application stylesheet is still loading. */
+      html { background: #070A12; color-scheme: dark; }
+      html[data-theme="light"] { background: #E8EBF0; color-scheme: light; }
+    </style>
+    <title>Ткаченко Пётр — веб-разработчик | Сайты и веб-приложения</title>
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

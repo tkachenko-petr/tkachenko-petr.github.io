@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>TP</title>
+  <path fill="#070A12" stroke="#7464AD" stroke-width="3.5" stroke-linejoin="round"
+    d="M17 4h32l11 11v31L46 60H15L4 49V17Z"/>
+  <path fill="none" stroke="#A18AFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
+    d="M4 27V17L17 4h11M60 36V46L46 60H36"/>
+  <path fill="none" stroke="#F5F7FF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"
+    d="M13.5 21h19m-9.5 0v23m14.5 0V21h6c10.5 0 10.5 14 0 14h-6"/>
+</svg>

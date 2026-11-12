@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tkachenko-petr.github.io/sitemap.xml
