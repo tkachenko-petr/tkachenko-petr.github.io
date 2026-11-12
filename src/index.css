@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* Semantic tokens: components depend on their purpose, not a specific theme. */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #070a12;
+  --surface: #101624;
+  --surface-secondary: #101624;
+  --accent: #6589ff;
+  --violet: #a18aff;
+  --ink: #f5f7ff;
+  --muted: #b5bdcf;
+  --subtle: #95a0b7;
+  --on-accent: #0b1020;
+  --line: rgb(190 201 227 / 13%);
+  --line-strong: rgb(190 201 227 / 30%);
+  --glass: rgb(16 22 36 / 78%);
+  --glass-highlight: rgb(245 247 255 / 2.8%);
+  --glow-blue: rgb(101 137 255 / 6%);
+  --glow-violet: rgb(161 138 255 / 5%);
+  --card-shadow: 0 20px 56px rgb(0 0 0 / 26%), inset 0 1px 0 rgb(245 247 255 / 5%);
+}
+
+/* Soft Silver Glass: the same components, with a cool silver foundation. */
+[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #e8ebf0;
+  --surface: #f2f3f6;
+  --surface-secondary: #dce1e9;
+  --accent: #5369d3;
+  --violet: #7962c8;
+  --ink: #20283a;
+  --muted: #4c586e;
+  --subtle: #59667c;
+  --on-accent: #f5f7ff;
+  --line: rgb(56 72 104 / 16%);
+  --line-strong: rgb(56 72 104 / 34%);
+  --glass: rgb(242 243 246 / 78%);
+  --glass-highlight: rgb(250 251 253 / 24%);
+  --glow-blue: rgb(88 111 220 / 8%);
+  --glow-violet: rgb(121 98 200 / 7%);
+  --card-shadow: 0 20px 48px rgb(42 55 87 / 9%), inset 0 1px 0 rgb(250 251 253 / 65%);
+}
+
+/* Tailwind 4 aliases stay linked to the currently active semantic tokens. */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-accent: var(--accent);
+  --color-violet: var(--violet);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-on-accent: var(--on-accent);
+  --shadow-glass: var(--card-shadow);
+}
+
+@theme {
+  --font-sans: 'Manrope Variable', 'Segoe UI', sans-serif;
+  --text-display: clamp(2.25rem, 1.15rem + 4.5vw, 4.75rem);
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.055em;
+  --text-heading: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  --text-heading--line-height: 1.18;
+  --text-heading--letter-spacing: -0.04em;
+  --text-body: clamp(1rem, 0.94rem + 0.25vw, 1.125rem);
+  --text-body--line-height: 1.7;
+  --text-caption: clamp(0.75rem, 0.7rem + 0.2vw, 0.8125rem);
+  --text-caption--line-height: 1.5;
+  --radius-card: 1.5rem;
+  --radius-control: 1rem;
+  --ease-gentle: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    min-width: 0;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background: var(--canvas);
+    -webkit-font-smoothing: antialiased;
+  }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { font: inherit; cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--violet); outline-offset: 5px; }
+  ::selection { background: var(--violet); color: var(--canvas); }
+  h1, h2, h3 { text-wrap: balance; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
