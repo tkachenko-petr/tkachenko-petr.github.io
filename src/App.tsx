@@ -127,7 +127,7 @@ function App() {
                 </span>
               </h1>
               <p className="hero-description text-body text-muted intro-enter intro-description">
-                Адаптивные интерфейсы, продуманный дизайн и внимание к качеству каждой детали
+                От идеи до реализации — с вниманием к дизайну, удобству использования и качеству каждой детали.
               </p>
               <div className="hero-actions intro-enter intro-action">
                 <a className="button button-primary" href="#projects">
